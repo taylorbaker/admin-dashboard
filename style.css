@@ -1,0 +1,102 @@
+:root {
+  --sb-bg-color: #4B5563;
+  --sb-link-color: #f3f4f6;
+  --sb-padding: 20px;
+}
+
+body {
+  display: grid;
+  grid-template: 150px auto / 250px auto;
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.sidebar {
+  grid-area: 1 / 1 / 3 / 2;
+  background: var(--sb-bg-color);
+  padding: var(--sb-padding);
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - calc(2 * var(--sb-padding))); /* 100vh offset by sidebar padding */
+}
+
+.sections-1,
+.sections-2 {
+  margin-top: 50px;
+}
+
+.sb-link {
+  color: var(--sb-link-color);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 3px;
+}
+
+.sb-link:hover {
+  transform: scale(1.1);
+}
+
+.logo {
+  width: 36px;
+  height; 36px;
+}
+
+/* works with in-file svg recoloring, not embedded */
+/* svg { */
+/*   color: blue; */
+/* } */
+
+span {
+  margin-left: 15px;
+}
+
+.header {
+  grid-area: 1 / 2 / 2 / 3;
+  border: 1px solid orange;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+
+.container-top {
+  display: grid;
+  grid-template-columns: 1fr 100px 100px;
+}
+
+.container-bot {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+}
+
+
+.search {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  align-items: center;
+}
+
+.container-top > * {
+  display: grid;
+  /* align-items: center; */
+  border: 1px solid red;
+}
+
+.container-bot > * {
+  display: flex;
+  border: 1px solid red;
+}
+
+.odin-banner {
+  /* display: grid; */
+  /* grid-template-columns: 24px 1fr; */
+}
+
+.odin-head {
+  /* width: 146px; */
+}
+
+.main-content {
+  grid-area: 2 / 2 / 3 / 3;
+  border: 1px solid green;
+}
