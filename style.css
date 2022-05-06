@@ -74,26 +74,61 @@ span {
   display: grid;
   grid-template-columns: 24px 1fr;
   align-items: center;
+  padding: 10px;
 }
 
-.container-top > * {
-  display: grid;
-  /* align-items: center; */
-  border: 1px solid red;
+.search-entry {
+  border-radius: 8px;
 }
 
-.container-bot > * {
+.github-link {
   display: flex;
-  border: 1px solid red;
+  align-items: center;
+  justify-content: center;
 }
 
-.odin-banner {
-  /* display: grid; */
-  /* grid-template-columns: 24px 1fr; */
+.github-logo {
+  transform: scale(0.8);
 }
 
-.odin-head {
-  /* width: 146px; */
+.link-container {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.odin-logo {
+  width: 32px;
+}
+
+.top-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.top-link > span {
+  font-size: 18px;
+  font-weight: bold;
+  min-width: 90px;
+}
+
+.utilities {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  ://github.com/taylorbakerorder: 1px solid blue;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+}
+
+button {
+  background: #8080C4;
+  color: white;
+  padding: 5px;
+  border-radius: 15px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
 }
 
 .main-content {
