@@ -2,11 +2,12 @@
   --sb-bg-color: #4B5563;
   --sb-link-color: #f3f4f6;
   --sb-padding: 20px;
+  --header-bg-color: #9CA3AF;
 }
 
 body {
   display: grid;
-  grid-template: 150px auto / 250px auto;
+  grid-template: 125px auto / 250px auto;
   margin: 0px;
   padding: 0px;
   font-family: 'Raleway', sans-serif;
@@ -19,6 +20,7 @@ body {
   display: flex;
   flex-direction: column;
   height: calc(100vh - calc(2 * var(--sb-padding))); /* 100vh offset by sidebar padding */
+  position: fixed;
 }
 
 .sections-1,
@@ -57,18 +59,19 @@ span {
   border: 1px solid orange;
   display: grid;
   grid-template-rows: 1fr 1fr;
+  /* background-color: var(--header-bg-color); */
 }
 
 .container-top {
   display: grid;
   grid-template-columns: 1fr 100px 100px;
+  /* position: fixed; */
 }
 
 .container-bot {
   display: grid;
-  grid-template-columns: 1fr 300px;
+  grid-template-columns: 1fr 275px;
 }
-
 
 .search {
   display: grid;
@@ -116,7 +119,6 @@ span {
 .utilities {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  ://github.com/taylorbakerorder: 1px solid blue;
   align-items: center;
   gap: 10px;
   padding: 10px;
@@ -134,4 +136,33 @@ button {
 .main-content {
   grid-area: 2 / 2 / 3 / 3;
   border: 1px solid green;
+  display: grid;
+  grid-template: 1fr 1fr / 3fr minmax(225px, 1fr);
+  grid-gap: 5px;
+}
+
+.project-container,
+.js-exercises-container,
+.css-exercises-container {
+  padding: 10px;
+}
+
+.project-container {
+  grid-area: 1 / 1 / 3 / 2;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-gap: 5px;
+}
+
+.project-card {
+  min-width: 350px;
+  height: 300px;
+  border: 1px solid orange;
+}
+
+.main-content > * {
+  border: 1px solid purple;
 }
