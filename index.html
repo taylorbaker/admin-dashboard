@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Admin Dashboard</title>
+  <link rel="icon" href="./svg/tree.svg">
   <link rel="stylesheet" href="./style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,64 +13,64 @@
   <aside class="sidebar">
     <h1 class="site-id">
       <a title="Site ID" href="#" class="sb-link">
-        <embed class="logo" src="/svg/tree.svg">
+        <embed class="logo" src="./svg/tree.svg">
        <span>Dashboard</span>
       </a>
     </h1>
-    <div class="sections-1">
+    <div class="profile-management">
       <div class="home">
         <a title="Home" href="#"class="sb-link">
-          <embed src="/svg/home.svg">
+          <embed src="./svg/home.svg">
           <span>Home</span>
         </a>
       </div>
       <div class="profile">
         <a title="Profile" href="#" class="sb-link">
-          <embed src="/svg/account.svg">
+          <embed src="./svg/account.svg">
           <span>Profile</span>
         </a>
       </div>
       <div class="messages">
         <a title="Messages" href="#" class="sb-link">
-          <embed src="/svg/message.svg">
+          <embed src="./svg/message.svg">
           <span>Messages</span>
         </a>
       </div>
       <div class="history">
         <a title="History" href="#" class="sb-link">
-          <embed src="/svg/clock.svg">
+          <embed src="./svg/clock.svg">
           <span>History</span>
         </a>
       </div>
       <div class="tasks">
         <a title="Tasks" href="#" class="sb-link">
-          <embed src="/svg/note-multiple.svg">
+          <embed src="./svg/note-multiple.svg">
           <span>Tasks</span>
         </a>
       </div>
       <div class="communities">
         <a title="Communities" href="#" class="sb-link">
-          <embed src="/svg/account-group.svg">
+          <embed src="./svg/account-group.svg">
           <span>Communities</span>
         </a>
       </div>
     </div>
-    <div class="sections-2">
+    <div class="profile-utilities">
       <div class="settings">
         <a title="Settings" href="#" class="sb-link">
-          <embed src="/svg/cog.svg">
+          <embed src="./svg/cog.svg">
           <span>Settings</span>
         </a>
       </div>
       <div class="support">
         <a title="Support" href="#" class="sb-link">
-          <embed src="/svg/comment-question.svg">
+          <embed src="./svg/comment-question.svg">
           <span>Support</span>
         </a>
       </div>
       <div class="privacy">
         <a title="Privacy" href="#" class="sb-link">
-          <embed src="/svg/shield-check.svg">
+          <embed src="./svg/shield-check.svg">
           <span>Privacy</span>
         </a>
       </div>
@@ -77,29 +78,29 @@
   </aside>
 
   <div class="header">
-    <div class="container-top">
+    <div class="header-top">
       <div class="search">
-        <embed src="/svg/magnify.svg">
+        <embed src="./svg/magnify.svg">
         <input type="text" class="search-entry" name="search-string" placeholder="Search...">
       </div>
       <div class="color-mode"></div>
       <div class="github-link">
         <a class="github-logo" href="https://github.com/taylorbaker" target="_blank">
-          <img src="/Img/GitHub-Mark-64px.png" alt="Developer's GitHub Account">
+          <img src="./Img/GitHub-Mark-64px.png" alt="Developer GitHub Account">
         </a>
       </div>
     </div>
-    <div class="container-bot">
-      <div class="link-container">
-        <a class="top-link" title="TOP Link" href="https://www.theodinproject.com" target="_blank">
-          <img class="odin-logo" src="/Img/odin-head-sized.png" alt="The Odin Project Logo">
+    <div class="header-bot">
+      <div class="TOP-container">
+        <a class="TOP-link" title="TOP Link" href="https://www.theodinproject.com" target="_blank">
+          <img class="odin-logo" src="./Img/odin-head-sized.png" alt="The Odin Project Logo">
           <span>The Odin Project</span>
         </a>
       </div>
-      <div class="utilities">
-        <button name="new_button" class="new_button">New</button>
-        <button name="upload_button" class="upload_button">Upload</button>
-        <button name="share_button" class="share_button">Share</button>
+      <div class="socials">
+        <button name="new-button" class="new-button">New</button>
+        <button name="upload-button" class="upload-button">Upload</button>
+        <button name="share-button" class="share-button">Share</button>
       </div>
     </div>
   </div>
@@ -113,6 +114,16 @@
         <div class="project-card sign-up-form">
         </div>
         <div class="project-card landing-page">
+          <div class="project-name">Landing Page</div>
+          <img src="./Img/landing-page.png" alt="Landing Page Project">
+          <div class="preview-container">
+            <a title="Live View" href="https://github.com/taylorbaker/landing-page">
+              <svg class="icon-view" viewbox="0 0 24 24">
+                <path d="M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17M12,4.5C7,4.5 2.73,7.61 1,12C2.73,16.39 7,19.5 12,19.5C17,19.5 21.27,16.39 23,12C21.27,7.61 17,4.5 12,4.5Z"></path>
+              </svg>
+            </a>
+            <a class="live-preview" href=""></a>
+          </div>
         </div>
         <div class="project-card landing-page">
         </div>
@@ -120,7 +131,7 @@
         </div>
       </div>
     </div>
-    <div class="js-exercises-container">
+    <div class="main-exercises-container">
       <h3>JavaScript Exercises</h3>
       <div class="js-exercises">
         <div class="exercise">
@@ -130,8 +141,6 @@
         <div class="exercise">
         </div>
       </div>
-    </div>
-    <div class="css-exercises-container">
       <h3>CSS Exercises</h3>
       <div class="css-exercises">
         <div class="exercise grid-layout-3">

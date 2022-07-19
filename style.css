@@ -1,13 +1,15 @@
 :root {
   --sb-bg-color: #4B5563;
   --sb-link-color: #f3f4f6;
+  --sb-width: 250px;
   --sb-padding: 20px;
-  --header-bg-color: #9CA3AF;
+  --header-bg-color: #fff;
+  --header-height: 120px;
 }
 
 body {
   display: grid;
-  grid-template: 125px auto / 250px auto;
+  grid-template: var(--header-height) auto / var(--sb-width) auto;
   margin: 0px;
   padding: 0px;
   font-family: 'Raleway', sans-serif;
@@ -21,10 +23,11 @@ body {
   flex-direction: column;
   height: calc(100vh - calc(2 * var(--sb-padding))); /* 100vh offset by sidebar padding */
   position: fixed;
+  width: calc(var(--sb-width) - 2 * var(--sb-padding)); /* position:fixed prevents width from being inherited from parent. width set to sb-width offset by sidebar padding */
 }
 
-.sections-1,
-.sections-2 {
+.profile-management,
+.profile-utilities {
   margin-top: 50px;
 }
 
@@ -57,20 +60,22 @@ span {
 .header {
   grid-area: 1 / 2 / 2 / 3;
   border: 1px solid orange;
+  position: sticky;
+  top: calc(var(--header-height) / 2 * -1); /* results in .header-bot sticky at top of screen */
   display: grid;
   grid-template-rows: 1fr 1fr;
-  /* background-color: var(--header-bg-color); */
 }
 
-.container-top {
+.header-top {
   display: grid;
   grid-template-columns: 1fr 100px 100px;
-  /* position: fixed; */
+  background-color: var(--header-bg-color);
 }
 
-.container-bot {
+.header-bot {
   display: grid;
   grid-template-columns: 1fr 275px;
+  background-color: var(--header-bg-color);
 }
 
 .search {
@@ -82,6 +87,7 @@ span {
 
 .search-entry {
   border-radius: 8px;
+  max-width: 500px;
 }
 
 .github-link {
@@ -94,29 +100,29 @@ span {
   transform: scale(0.8);
 }
 
-.link-container {
+.TOP-container {
   display: flex;
-  align-items: center;
   padding: 10px;
 }
 
 .odin-logo {
-  width: 32px;
+  width: 24px;
 }
 
-.top-link {
+.TOP-link {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
+  justify-content: flex-end;
   text-decoration: none;
 }
 
-.top-link > span {
-  font-size: 18px;
+.TOP-link > span {
+  font-size: 16px;
   font-weight: bold;
   min-width: 90px;
 }
 
-.utilities {
+.socials {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
@@ -137,18 +143,13 @@ button {
   grid-area: 2 / 2 / 3 / 3;
   border: 1px solid green;
   display: grid;
-  grid-template: 1fr 1fr / 3fr minmax(225px, 1fr);
+  grid-template-columns: 3fr minmax(225px, 1fr);
   grid-gap: 5px;
 }
 
 .project-container,
-.js-exercises-container,
-.css-exercises-container {
+.main-exercises-container {
   padding: 10px;
-}
-
-.project-container {
-  grid-area: 1 / 1 / 3 / 2;
 }
 
 .projects {
@@ -163,6 +164,16 @@ button {
   border: 1px solid orange;
 }
 
+.icon-view {
+  width: 24px;
+  height: 24px;
+}
+
 .main-content > * {
-  border: 1px solid purple;
+  border: 1px solid green;
+}
+
+.project-card > img {
+  min-width: 100px;
+  max-width: 350px;
 }
