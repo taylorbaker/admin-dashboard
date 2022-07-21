@@ -23,7 +23,7 @@ body {
   flex-direction: column;
   height: calc(100vh - calc(2 * var(--sb-padding))); /* 100vh offset by sidebar padding */
   position: fixed;
-  width: calc(var(--sb-width) - 2 * var(--sb-padding)); /* position:fixed prevents width from being inherited from parent. width set to sb-width offset by sidebar padding */
+  width: calc(var(--sb-width) - 2 * var(--sb-padding)); /* position: fixed prevents width from being inherited from parent. width set to sb-width offset by sidebar padding */
 }
 
 .profile-management,
@@ -43,15 +43,22 @@ body {
   transform: scale(1.1);
 }
 
-.logo {
-  width: 36px;
-  height; 36px;
+.logo,
+.gh-logo {
+  width: 42px;
+  height; 42px;
 }
 
-/* works with in-file svg recoloring, not embedded */
-/* svg { */
-/*   color: blue; */
-/* } */
+.nav-icon {
+  fill: pink;
+  width: 24px;
+  height: 24px;
+}
+
+/* works with inline svg recoloring, not linked */
+svg {
+  fill: blue;
+}
 
 span {
   margin-left: 15px;
@@ -164,9 +171,11 @@ button {
   border: 1px solid orange;
 }
 
-.icon-view {
+.icon-view,
+.icon-gh {
   width: 24px;
   height: 24px;
+  margin: 3px;
 }
 
 .main-content > * {
