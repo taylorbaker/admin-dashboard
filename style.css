@@ -1,10 +1,12 @@
 :root {
-  --sb-bg-color: #4B5563;
+  --sb-bg-color: #95dab6;
   --sb-link-color: #f3f4f6;
   --sb-width: 250px;
   --sb-padding: 20px;
   --header-bg-color: #fff;
-  --header-height: 120px;
+  --header-height: 96px;
+  --content-bg-color: #ececec;
+  --accent-color: #83b2d0;
 }
 
 body {
@@ -13,6 +15,18 @@ body {
   margin: 0px;
   padding: 0px;
   font-family: 'Raleway', sans-serif;
+}
+
+h3,
+.TOP-link span,
+.exercise a,
+.project-card a {
+  text-shadow: 0.05em 0.05em 0.1em gray;
+}
+
+.sidebar,
+.header {
+  box-shadow: 1px 3px 7px gray;
 }
 
 .sidebar {
@@ -24,6 +38,7 @@ body {
   height: calc(100vh - calc(2 * var(--sb-padding))); /* 100vh offset by sidebar padding */
   position: fixed;
   width: calc(var(--sb-width) - 2 * var(--sb-padding)); /* position: fixed prevents width from being inherited from parent. width set to sb-width offset by sidebar padding */
+  z-index: 1;
 }
 
 .profile-management,
@@ -37,36 +52,40 @@ body {
   display: flex;
   align-items: center;
   padding: 3px;
+  text-shadow: 2px 0.05em 3px black;
 }
 
 .sb-link:hover {
   transform: scale(1.1);
 }
 
-.logo,
-.gh-logo {
+.sb-link span {
+  font-weight: bold;
+  margin-left: 15px;
+}
+
+.page-logo,
+.nav-icon {
+  fill: var(--sb-link-color);
+}
+
+.page-logo {
   width: 42px;
   height; 42px;
 }
 
 .nav-icon {
-  fill: pink;
   width: 24px;
   height: 24px;
 }
 
 /* works with inline svg recoloring, not linked */
 svg {
-  fill: blue;
-}
-
-span {
-  margin-left: 15px;
+  filter: drop-shadow(0.1em 0.1em 0.1em grey);
 }
 
 .header {
   grid-area: 1 / 2 / 2 / 3;
-  border: 1px solid orange;
   position: sticky;
   top: calc(var(--header-height) / 2 * -1); /* results in .header-bot sticky at top of screen */
   display: grid;
@@ -83,18 +102,21 @@ span {
   display: grid;
   grid-template-columns: 1fr 275px;
   background-color: var(--header-bg-color);
+  height: calc(var(--header-height) / 2);
+  padding: 0px;
 }
 
 .search {
-  display: grid;
-  grid-template-columns: 24px 1fr;
+  display: flex;
   align-items: center;
-  padding: 10px;
+  padding: 0px 10px;
 }
 
 .search-entry {
-  border-radius: 8px;
-  max-width: 500px;
+  border-radius: 12px;
+  width: clamp(200px, 80%, 500px);
+  height: 25px;
+  background: var(--content-bg-color);
 }
 
 .github-link {
@@ -103,23 +125,31 @@ span {
   justify-content: center;
 }
 
-.github-logo {
-  transform: scale(0.8);
+.github-link a {
+  margin: 0px;
+}
+
+.gh-logo {
+  width: 32px;
+  height: 32px;
+  fill: var(--sb-bg-color);
 }
 
 .TOP-container {
   display: flex;
-  padding: 10px;
+  align-items: center;
+  padding: 0px 10px;
 }
 
-.odin-logo {
-  /* width: 24px; */
+.TOP-logo {
+  height: 30px;
 }
 
 .TOP-link {
   display: flex;
   align-items: center;
   text-decoration: none;
+  height: min-content;
 }
 
 .TOP-link span {
@@ -129,25 +159,24 @@ span {
 }
 
 .socials {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  justify-content: space-around;
   align-items: center;
-  gap: 10px;
-  padding: 10px;
 }
 
 button {
-  background: #8080C4;
+  background: var(--sb-bg-color);
   color: white;
-  padding: 5px;
+  height: 30px;
+  padding: 0px 15px;
   border-radius: 15px;
   font-family: 'Raleway', sans-serif;
   font-weight: bold;
+  text-shadow: 0.05em 0.05em 0.1em gray;
 }
 
 .main-content {
   grid-area: 2 / 2 / 3 / 3;
-  border: 1px solid green;
   display: grid;
   grid-template-columns: 3fr minmax(250px, 1fr);
   grid-gap: 5px;
@@ -170,8 +199,14 @@ button {
   height: auto;
   padding: 10px;
   border-radius: 10px;
-  box-shadow: 1px 3px 4px var(--sb-bg-color);
-  /* border: 1px solid orange; */
+  border-left: 6px solid var(--accent-color);
+}
+
+.project-card,
+.js-exercises,
+.css-exercises {
+  box-shadow: 1px 3px 4px gray;
+  background: white;
 }
 
 .project-card a,
@@ -195,13 +230,18 @@ button {
   width: 24px;
   height: 24px;
   margin: 3px;
+  fill: var(--sb-bg-color);
+}
+
+.icon-view:hover,
+.icon-gh:hover {
+  transform: scale(1.1);
 }
 
 .js-exercises,
 .css-exercises {
   border-radius: 10px;
-  padding: 0px 5px;
-  border: 1px solid blue;
+  padding: 10px;
 }
 
 .exercise a {
@@ -217,7 +257,8 @@ hr {
   border-top: 1px; /* change from default thickness */
 }
 
-.main-content > * {
-  border: 1px solid green;
+.main-content,
+.main-exercises-container {
+  background: var(--content-bg-color);
 }
 
